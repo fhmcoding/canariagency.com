@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link
+	  rel="stylesheet"
+	  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+
+	<style type="text/css">
+		*,body{
+		  	font-family: "Poppins", sans-serif;
+		    font-weight: 400;
+		}
+		.swiper-button-next, .swiper-button-prev {
+		    background-color: #fff;
+		    width: 40px !important;
+		    height: 40px !important;
+		    border-radius: 99%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    color: #000 !important;
+		    font-weight: 700;
+		    box-shadow: 0 4px 10px #03121a26;
+		}
+		.swiper-button-next:after, .swiper-button-prev:after{
+			font-size: 17px !important;
+		}
+
+	</style>
+</head>
+<body class="overflow-x-hidden">
+	<header class="bg-white w-full">
+	  	<nav class="mx-auto  px-6 lg:px-24 flex items-center justify-between py-6" aria-label="Global">
+		    <div class="flex lg:flex-1">
+		      <a href="#" class="-m-1.5 p-1.5">
+		        <span class="sr-only">Your Company</span>
+		        <img class="w-auto h-[56px]" src="images/logo.png" alt="">
+		      </a>
+		    </div>
+		    <div class="flex lg:hidden">
+		      <button type="button" onclick="toggel()" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+		        <span class="sr-only">Open main menu</span>
+		        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+		          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+		        </svg>
+		      </button>
+		    </div>
+	    	<div class="hidden lg:flex lg:gap-x-12">
+		      <a href="#" class="text-md font-semibold leading-6 text-gray-900">Home</a>
+		      <a href="#" class="text-md font-semibold leading-6 text-gray-900">About Us</a>
+		      <a href="#" class="text-md font-semibold leading-6 text-gray-900">Our Team</a>
+		      <a href="#" class="text-md font-semibold leading-6 text-gray-900">Services</a>
+	    	</div>
+	    	<div class="hidden lg:flex lg:flex-1 lg:justify-end">
+	      		<a href="#" class="text-md font-semibold leading-6 text-white bg-blue-800 py-2.5 px-5 rounded-md flex items-center gap-2">Let's talk<span aria-hidden="true" class="">&rarr;</span></a>
+	    	</div>
+	  	</nav>
+  		<div class="lg:hidden hidden" id="mobilenav" role="dialog" aria-modal="true">
+		    <!-- Background backdrop, show/hide based on slide-over state. -->
+		    <div class="fixed inset-0 z-10"></div>
+		    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+		      <div class="flex items-center justify-between">
+		        <a href="#" class="-m-1.5 p-1.5">
+		          <span class="sr-only">Your Company</span>
+		          <img class="h-[56px] w-auto" src="images/logo.png" alt="">
+		        </a>
+		        <button type="button" onclick="toggel()" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+		      </div>
+		      <div class="mt-6 flow-root">
+		        <div class="-my-6 divide-y divide-gray-500/10">
+		          <div class="space-y-2 py-6">
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+		          </div>
+		          <div class="py-6">
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+	  	</div>
+	</header>
+
+	<div class="py-4 lg:py-16 xl:py-16 relative">
+		<div class="mx-auto  px-6 lg:px-24">
+			<div>
+				<h1 class="font-bold text-gray-900 text-5xl mb-1">Marketing numérique et</h1>
+				<h1 class="font-bold text-gray-900 text-5xl mb-10">Développement de logiciels</h1>
+				<p class="text-gray-700 w-full lg:w-2/5 xl:w-2/5 mb-10 ">Nous vous aidons à obtenir plus de ventes, de prospects, de visibilité et de crédibilité en ligne grâce à nos services de marketing sur les réseaux sociaux et de publicité en ligne.</p>
+
+				<div class="flex gap-3 lg:w-1/3 xl:w-1/3 w-full mb-16">
+					<div class="xl:w-1/3 lg:w-1/3 w-1/3 border-t border-gray-200 pt-5">
+						<h5 class="font-semibold text-2xl mb-2">49+</h5>
+						<div class="grid">
+							<span class="text-gray-500 text-sm font-semibold">Complété</span>
+							<span class="text-gray-500 text-sm font-semibold">Projets</span>
+						</div>
+					</div>
+
+					<div class="xl:w-1/3 lg:w-1/3 w-1/3  border-t border-gray-200 pt-5">
+						<h5 class="font-semibold text-2xl mb-2">39+</h5>
+						<div class="grid">
+							<span class="text-gray-500 text-sm font-semibold">Cinq étoiles</span>
+							<span class="text-gray-500 text-sm font-semibold">Commentaires</span>
+						</div>
+					</div>
+
+					<div class="xl:w-1/3 lg:w-1/3 w-1/3  border-t border-gray-200 pt-5">
+						<h5 class="font-semibold text-2xl mb-2">5+</h5>
+						<div class="grid">
+							<span class="text-gray-500 text-sm font-semibold">Des années</span>
+							<span class="text-gray-500 text-sm font-semibold">d'expérience
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<button class="text-md font-semibold leading-6 text-white bg-blue-800 py-2.5 px-5 rounded-md flex items-center gap-2 mb-10">Obtenir un devis gratuit ></button>
+			</div>
+
+			<div class="hidden lg:flex xl:flex  absolute top-[200px]  right-[-15px] flex items-center" style="transform: rotate(-40deg);">
+				<img src="https://nextop.net/wp-content/uploads/2023/02/mobile-design-dubai-2.webp" class="w-[200px]">
+				<img src="https://nextop.net/wp-content/uploads/2023/02/nextop-agency-_1_-1.webp" class="mt-16 w-[600px]">
+				<img src="https://nextop.net/wp-content/uploads/2023/02/top-dubai-website-1-1536x1138.webp" class=" w-[400px]">
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-black py-10 lg:py-16 xl:py-16">
+		<div  class="mx-auto  px-6 lg:px-24">
+			<div class="mt-0 xl:mt-[250px] lg:mt-[250px]">
+				<h6 class="text-base text-white text-center">NOS SERVICES</h6>
+				<div class="flex items-center justify-center">
+					<h1 class="font-bold text-5xl text-white text-center w-full xl:w-1/2 lg:w-1/2">
+						Nous sommes votre prochain arrêt 
+						vers votre prochain sommet
+					</h1>
+				</div>
+
+				<div class="grid lg:flex xl:flex w-full mt-16 gap-8">
+					<div class="w-full xl:w-1/2 lg:w-1/2 bg-gray-900 p-4 rounded-md">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout text-orange-500 font-bold w-12 h-12 mb-4"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+
+						<h1 class="font-bold text-white text-2xl">WEBSITES</h1>
+						
+						<p class="mt-3 text-gray-300 text-sm">Lancez le site Web de votre entreprise qui raconte l'histoire de votre entreprise et présentez vos compétences au monde entier. En utilisant les dernières technologies, nous pouvons vous aider à concevoir et à créer votre site Web sur mesure.</p>
+						
+						<p class="mt-1 text-gray-300 text-sm">We pride ourselves on crafting aesthetically pleasing websites, but which are also designed to convert browsers into customers.</p>
+					</div>
+
+					<div class="w-full lg:w-1/2 xl:w-1/2 bg-gray-900 p-4 rounded-md">
+						
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone text-green-500 font-bold w-12 h-12 mb-4"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+
+						<h1 class="font-bold text-white text-2xl">MOBILE APPLICATIONS</h1>
+						
+						<p class="mt-3 text-gray-300 text-sm">Créez une application mobile professionnelle qui met en avant votre expertise et présente vos compétences au monde entier. En utilisant les technologies les plus récentes, nous pouvons vous aider à concevoir et à développer votre application mobile sur mesure.</p>
+						
+					</div>
+				</div>
+
+				<div class="grid lg:flex xl:flex w-full mt-8 gap-8">
+					<div class="w-full xl:w-1/2 lg:w-1/2 bg-gray-900 p-4 rounded-md">
+						
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram text-pink-500 font-bold w-12 h-12 mb-4"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+
+						<h1 class="font-bold text-white text-2xl">Social Media Management</h1>
+						
+						<p class="mt-3 text-gray-300 text-sm">Launch your business website that tells your company story and showcase your skills to the world, Using the latest technologies, We can help you design and build your bespoke website.</p>
+						
+					</div>
+
+					<div class="w-full xl:w-1/2 lg:w-1/2 bg-gray-900 p-4 rounded-md">
+						
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up text-blue-500 font-bold w-12 h-12 mb-4"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+
+						<h1 class="font-bold text-white text-2xl">Sales Growth</h1>
+						
+						<p class="mt-3 text-gray-300 text-sm">Launch your business website that tells your company story and showcase your skills to the world, Using the latest technologies, We can help you design and build your bespoke website.</p>
+						
+						<p class="mt-1 text-gray-300 text-sm"> We pride ourselves on crafting aesthetically pleasing websites, but which are also designed to convert browsers into customers.</p>
+					</div>
+				</div>
+				<div class="text-center flex items-center justify-center">
+					<a href="#" class="mt-12 font-semibold hover:bg-white hover:text-black transition   ease-out duration-300 hover:ease-in text-white border border-white p-2.5 px-4 rounded-md">Let's discuss your project</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-white py-4 lg:py-16 xl:py-16">
+		<h6 class="text-base text-gray-800 text-center">OUR CLIENTS</h6>
+		<div class="flex items-center justify-center">
+			<h1 class="font-bold text-5xl text-black text-center lg:w-1/2 xl:w-1/2">
+				We are your next stop 
+				to your next top
+			</h1>
+		</div>
+		<div class="mx-auto py-5 px-6 lg:px-24">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="lg:flex xl:flex grid w-full mt-16">
+							<div class="lg:w-1/2 xl:w-1/2 w-full">
+								<img src="https://nextop.net/wp-content/uploads/2023/02/nextop-agency-_2_-1.webp">
+							</div>
+							<div class="lg:w-1/2 xl:w-1/2 w-full">
+								<h1 class="mt-6 mb-4 font-semibold text-xl">El Saharaino Travel</h1>
+
+								<p class="text-gray-700">
+									In today’s digital age, A website is one of the most important marketing tools for businesses of all sizes and industries to Increased Visibility, Credibility, Accessibility and Competitive Advantage. 
+								</p>
+
+								<div class="flex gap-1 mt-6">
+									<a href="https://play.google.com/store/apps/details?id=com.marKoub.app&amp;hl" target="_blank"><img src="https://wadina.agency/playstore-badge.png" class="w-36 h-auto" alt=""></a>
+									<a href="https://apps.apple.com/us/app/markoub-ma/id1559228679" target="_blank"><img src="https://wadina.agency/appstore-badge.png" class="w-36 h-auto" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="swiper-slide">
+						<div class="lg:flex xl:flex grid  w-full mt-16">
+							<div class="lg:w-1/2 xl:w-1/2 w-full">
+								<img src="https://nextop.net/wp-content/uploads/2023/02/nextop-agency-_2_-1.webp">
+							</div>
+							<div class="lg:w-1/2 xl:w-1/2 w-full">
+								<h1 class="mt-6 mb-4 font-semibold text-xl">El Saharaino Hotel</h1>
+
+								<p class="text-gray-700">
+									In today’s digital age, A website is one of the most important marketing tools for businesses of all sizes and industries to Increased Visibility, Credibility, Accessibility and Competitive Advantage. 
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="lg:flex xl:flex grid w-full mt-16">
+							<div class="lg:w-1/2 xl:w-1/2 w-full">
+								<img src="https://nextop.net/wp-content/uploads/2023/02/nextop-agency-_2_-1.webp">
+							</div>
+							<div class="lg:w-1/2 xl:w-1/2 w-full">
+								<h1 class="mt-6 mb-4 font-semibold text-xl">International Federation of Asian and African Trade Unions IFAATU</h1>
+
+								<p class="text-gray-700">
+									In today’s digital age, A website is one of the most important marketing tools for businesses of all sizes and industries to Increased Visibility, Credibility, Accessibility and Competitive Advantage. 
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			  	<div class="swiper-button-prev"></div>
+			  	<div class="swiper-button-next"></div>
+		  	</div>
+		</div>
+	</div>
+
+	<div class="bg-white">
+		<h1 class="font-bold mb-16 text-5xl text-black text-center">			Contact Us
+		</h1>
+
+		<iframe class=" w-full h-[350px]" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Web%20Services%20Sh%20laayoune&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" title="Web Services Sh laayoune" aria-label="Web Services Sh laayoune"></iframe>
+	</div>
+
+	<footer class="bg-white" aria-labelledby="footer-heading">
+		<h2 id="footer-heading" class="sr-only">Footer</h2>
+		<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+		    <div class="grid lg:flex xl:flex justify-between gap-2">
+		      	<div class="w-full xl:w-2/5 lg:w-2/5">
+			        <img class="h-7  h-[56px] mb-5" src="images/logo.png" alt="Company name">
+			        <p class="text-sm mb-5 leading-6 text-gray-600">Making the world a better place through constructing elegant hierarchies.</p>
+			        <div class="flex space-x-6">
+			          <a href="#" class="text-gray-400 hover:text-gray-500">
+			            <span class="sr-only">Facebook</span>
+			            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+			              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+			            </svg>
+			          </a>
+			          <a href="#" class="text-gray-400 hover:text-gray-500">
+			            <span class="sr-only">Instagram</span>
+			            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+			              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+			            </svg>
+			          </a>
+			          <a href="#" class="text-gray-400 hover:text-gray-500">
+			            <span class="sr-only">X</span>
+			            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+			              <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+			            </svg>
+			          </a>
+			          <a href="#" class="text-gray-400 hover:text-gray-500">
+			            <span class="sr-only">GitHub</span>
+			            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+			              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+			            </svg>
+			          </a>
+			          <a href="#" class="text-gray-400 hover:text-gray-500">
+			            <span class="sr-only">YouTube</span>
+			            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+			              <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" />
+			            </svg>
+			          </a>
+			        </div>
+		      	</div>
+		        <div class="w-full xl:w-3/5 lg:w-3/5 md:grid md:grid-cols-3 md:gap-8">
+		          	<div class="mb-6 lg:mb-0 xl:mb-0">
+		            	<h3 class="text-sm font-semibold leading-6 text-gray-900">Main Serices</h3>
+			            <ul role="list" class="lg:mt-6 xl:mt-6 mt-2 space-y-2 lg:space-y-4 xl:space-y-4">
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Branding design</a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Websites</a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Content Marketing</a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Sales</a>
+			              </li>
+			            </ul>
+		          	</div>
+		          	<div>
+			            <h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
+			            <ul role="list" class="lg:mt-6 xl:mt-6 mt-2 space-y-2 lg:space-y-4 xl:space-y-4">
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Claim</a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Privacy</a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Terms</a>
+			              </li>
+			            </ul>
+		          	</div>
+		          		<div class="my-6 lg:my-0 xl:my-0">
+			            <h3 class="text-sm font-semibold leading-6 text-gray-900">Contact Us</h3>
+			            <ul role="list" class="lg:mt-6 xl:mt-6 mt-2 space-y-2 lg:space-y-4 xl:space-y-4">
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900 flex items-start gap-2">
+			                	<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+								</span>
+			                	<span>+212 724 705 832</span>
+			                </a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900 flex items-start gap-2">
+			                	<span>
+			                		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+			                	</span>
+			                	<span>contact@canariapp.com</span>
+			                </a>
+			              </li>
+			              <li>
+			                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900 flex items-start gap-2">
+			                	<span>
+			                		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+			                	</span>
+			                	<span>Laayoune, Mahj Mohammed VI N 302 3 étage</span>
+			                </a>
+			              </li>	              
+			            </ul>
+		          	</div>
+		        </div>
+		    </div>
+		    <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+		      <p class="text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+		    </div>
+		</div>
+	</footer>
+
+	<div class="fixed bottom-4 left-0 flex items-center justify-center w-full z-10">
+		<div class="animate-bounce w-2/5 p-6 rounded-[50px] bg-gray-300/50 backdrop-blur-sm flex gap-3 items-center">
+			<a href="#" class="px-6 py-2.5 rounded-3xl bg-white text-black flex gap-2 items-center w-1/2  text-center justify-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-[18px]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+				<span>Call us now</span>
+			</a>
+
+			<a href="#" class="w-1/2 px-10 py-2.5 rounded-3xl bg-[#3FB44F] text-white flex gap-2 items-center justify-center ">
+				<img src="images/icons8-whatsapp-50.png" class="w-[18px]">
+				<span>Whatsapp</span>
+			</a>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+	<script type="text/javascript">
+		const swiper = new Swiper('.swiper', {
+		   	pagination: {
+			  el: '.swiper-pagination',
+			},
+			navigation: {
+			   nextEl: '.swiper-button-next',
+			   prevEl: '.swiper-button-prev',
+			},
+		});
+
+		function toggel(){
+              const elem = document.getElementById("mobilenav");
+              if(elem.classList.contains('hidden')){
+                elem.classList.remove('hidden')
+              }else {
+                elem.classList.add('hidden')
+              }
+
+        }
+
+	</script>
+</body>
+</html>
