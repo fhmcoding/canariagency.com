@@ -523,6 +523,20 @@
 		const swiper2 = new Swiper('.swiper2', {
 			slidesPerView:3,
 			spaceBetween:10,
+			breakpoints:{
+				320: {
+			      slidesPerView: 1,
+			      spaceBetween: 10
+			    },
+			    480: {
+			      slidesPerView: 1.2,
+			      spaceBetween: 10
+			    },
+			    640: {
+			      slidesPerView: 3,
+			      spaceBetween: 10
+			    }
+			},
 		   	pagination: {
 			  el: '.swiper-pagination2',
 			},
