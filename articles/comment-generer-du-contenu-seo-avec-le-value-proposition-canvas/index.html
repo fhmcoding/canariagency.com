@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canari Agency - Comment générer du contenu SEO avec le Value Proposition Canvas ?</title>
+    <meta name="theme-color" content="#004AAD">
+    <link rel="icon" type="image/x-icon" href="../../images/logo.png">
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link
+	  rel="stylesheet"
+	  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+
+	<style type="text/css">
+		*,body{
+		  	font-family: "Poppins", sans-serif;
+		    font-weight: 400;
+		}
+		.swiper-button-next, .swiper-button-prev {
+		    background-color: #fff;
+		    width: 40px !important;
+		    height: 40px !important;
+		    border-radius: 99%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    color: #000 !important;
+		    font-weight: 700;
+		    box-shadow: 0 4px 10px #03121a26;
+		}
+		.swiper-button-next:after, .swiper-button-prev:after{
+			font-size: 17px !important;
+		}
+
+	</style>
+</head>
+<body class="overflow-x-hidden">
+	<header class="bg-white w-full">
+	  	<nav class="mx-auto  px-6 lg:px-24 flex items-center justify-between py-6" aria-label="Global">
+		    <div class="flex lg:flex-1">
+		      <a href="#" class="-m-1.5 p-1.5">
+		        <span class="sr-only">Your Company</span>
+		        <img class="w-auto h-[56px]" src="../../images/logo.png" alt="">
+		      </a>
+		    </div>
+		    <div class="flex lg:hidden">
+		      <button type="button" onclick="toggel()" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+		        <span class="sr-only">Open main menu</span>
+		        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+		          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+		        </svg>
+		      </button>
+		    </div>
+	    	<div class="hidden lg:flex lg:gap-x-12">
+		      <a href="#" class="text-md font-semibold leading-6 text-gray-900">Accueil</a>
+		      <a href="#nos-services" class="text-md font-semibold leading-6 text-gray-900">Nos Services</a>
+		      <a href="#nos-clients" class="text-md font-semibold leading-6 text-gray-900">Nos Clients</a>
+		      <a href="#contactez-nous" class="text-md font-semibold leading-6 text-gray-900">Contactez-nous</a>
+	    	</div>
+	    	<div class="hidden lg:flex lg:flex-1 lg:justify-end">
+	      		<a href="https://wa.me/212724705832" class="text-md font-semibold leading-6 text-white bg-blue-800 py-2.5 px-5 rounded-md flex items-center gap-2">Parlons-en<span aria-hidden="true" class="">&rarr;</span></a>
+	    	</div>
+	  	</nav>
+  		<div class="lg:hidden hidden" id="mobilenav" role="dialog" aria-modal="true">
+		    <!-- Background backdrop, show/hide based on slide-over state. -->
+		    <div class="fixed inset-0 z-10"></div>
+		    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+		      <div class="flex items-center justify-between">
+		        <a href="#" class="-m-1.5 p-1.5">
+		          <span class="sr-only">Your Company</span>
+		          <img class="h-[56px] w-auto" src="../../images/logo.png" alt="">
+		        </a>
+		        <button type="button" onclick="toggel()" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+		      </div>
+		      <div class="mt-6 flow-root">
+		        <div class="-my-6 divide-y divide-gray-500/10">
+		          <div class="space-y-2 py-6">
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Accueil</a>
+		            <a href="#nos-services" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Nos Services</a>
+		            <a href="#nos-clients" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Nos Clients</a>
+		            <a href="#contactez-nous" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contactez-nous</a>
+		          </div>
+		          
+		        </div>
+		      </div>
+		    </div>
+	  	</div>
+	</header>
+
+	
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canari Agency - Bing Deep Search : La révolution de l’IA générative de Microsoft</title>
+    <meta name="theme-color" content="#004AAD">
+     <link rel="icon" type="image/x-icon" href="../../images/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link
+	  rel="stylesheet"
+	  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+
+	<style type="text/css">
+		*,body{
+		  	font-family: "Poppins", sans-serif;
+		    font-weight: 400;
+		}
+		.swiper-button-next, .swiper-button-prev {
+		    background-color: #fff;
+		    width: 40px !important;
+		    height: 40px !important;
+		    border-radius: 99%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    color: #000 !important;
+		    font-weight: 700;
+		    box-shadow: 0 4px 10px #03121a26;
+		}
+		.swiper-button-next:after, .swiper-button-prev:after{
+			font-size: 17px !important;
+		}
+
+	</style>
+</head>
+<body class="overflow-x-hidden bg-gray-100">
+	<header class="bg-white w-full">
+	  	<nav class="mx-auto  px-6 lg:px-24 flex items-center justify-between py-6" aria-label="Global">
+		    <div class="flex lg:flex-1">
+		      <a href="#" class="-m-1.5 p-1.5">
+		        <span class="sr-only">Your Company</span>
+		        <img class="w-auto h-[56px]" src="../../images/logo.png" alt="">
+		      </a>
+		    </div>
+		    <div class="flex lg:hidden">
+		      <button type="button" onclick="toggel()" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+		        <span class="sr-only">Open main menu</span>
+		        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+		          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+		        </svg>
+		      </button>
+		    </div>
+	    	<div class="hidden lg:flex lg:gap-x-12">
+		      <a href="#" class="text-md font-semibold leading-6 text-gray-900">Accueil</a>
+		      <a href="#nos-services" class="text-md font-semibold leading-6 text-gray-900">Nos Services</a>
+		      <a href="#nos-clients" class="text-md font-semibold leading-6 text-gray-900">Nos Clients</a>
+		      <a href="#contactez-nous" class="text-md font-semibold leading-6 text-gray-900">Contactez-nous</a>
+	    	</div>
+	    	<div class="hidden lg:flex lg:flex-1 lg:justify-end">
+	      		<a href="https://wa.me/212724705832" class="text-md font-semibold leading-6 text-white bg-blue-800 py-2.5 px-5 rounded-md flex items-center gap-2">Parlons-en<span aria-hidden="true" class="">&rarr;</span></a>
+	    	</div>
+	  	</nav>
+  		<div class="lg:hidden hidden" id="mobilenav" role="dialog" aria-modal="true">
+		    <!-- Background backdrop, show/hide based on slide-over state. -->
+		    <div class="fixed inset-0 z-10"></div>
+		    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+		      <div class="flex items-center justify-between">
+		        <a href="#" class="-m-1.5 p-1.5">
+		          <span class="sr-only">Your Company</span>
+		          <img class="h-[56px] w-auto" src="../../images/logo.png" alt="">
+		        </a>
+		        <button type="button" onclick="toggel()" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+		      </div>
+		      <div class="mt-6 flow-root">
+		        <div class="-my-6 divide-y divide-gray-500/10">
+		          <div class="space-y-2 py-6">
+		            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Accueil</a>
+		            <a href="#nos-services" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Nos Services</a>
+		            <a href="#nos-clients" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Nos Clients</a>
+		            <a href="#contactez-nous" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contactez-nous</a>
+		          </div>
+		          
+		        </div>
+		      </div>
+		    </div>
+	  	</div>
+	</header>
+	<div class="mx-auto  px-6 lg:px-24">
+		<div class="bg-gray-100 text-gray-800 py-4">
+		    <div class="p-6 bg-white rounded-lg shadow-lg">
+		        <h1 class="text-3xl font-bold mb-4">Une avancée majeure dans le paysage de la recherche en ligne</h1>
+
+		        <img src="https://geniusagency.ma/wp-content/uploads/2024/03/19199085.jpg?w=1024" class="rounded-md mx-1">
+
+		        <p class="mb-4">
+		            Dans le monde en constante évolution de la technologie, la recherche en ligne est un domaine qui ne cesse de progresser. L'une des innovations les plus récentes dans ce domaine est Bing Deep Search, un outil de recherche avancé développé par Microsoft. Cette technologie promet de transformer la manière dont nous accédons et utilisons les informations en ligne.
+		        </p>
+		        <h2 class="text-2xl font-semibold mb-3">La genèse de Bing Deep Search</h2>
+		        <p class="mb-4">
+		            Microsoft a dévoilé Bing Deep Search lors d'un événement en décembre 2023 comme une évolution naturelle de son moteur de recherche Bing. Basée sur des technologies d'intelligence artificielle et de machine learning, Bing Deep Search vise à fournir des résultats de recherche plus précis, plus pertinents et plus adaptés aux besoins spécifiques des utilisateurs.
+		        </p>
+		        <h2 class="text-2xl font-semibold mb-3">Les détails techniques</h2>
+		        <h3 class="text-xl font-semibold mb-2">Fonctionnement de Deep Search</h3>
+		        <p class="mb-4">
+		            Bing Deep Search utilise l'IA et le machine learning pour analyser et classer les résultats de recherche. Il est conçu pour comprendre le contexte des requêtes de recherche et fournir des réponses plus pertinentes et plus complètes. De plus, Bing Deep Search utilise des algorithmes de traitement du langage naturel pour mieux comprendre les nuances et les intentions derrière chaque requête.
+		        </p>
+		        <h3 class="text-xl font-semibold mb-2">Classement des résultats de Deep Search</h3>
+		        <p class="mb-4">
+		            Le classement des résultats de recherche est basé sur une combinaison de facteurs, y compris:
+		        </p>
+		        <ul class="list-disc list-inside mb-4">
+		            <li>La pertinence du contenu</li>
+		            <li>La qualité des sources</li>
+		            <li>La fraîcheur des informations</li>
+		            <li>La popularité des pages web</li>
+		            <li>Les signaux sociaux et l'engagement des utilisateurs</li>
+		        </ul>
+		        <h2 class="text-2xl font-semibold mb-3">L'importance de Bing Deep Search</h2>
+		        <p>
+		            Cette nouvelle technologie de recherche en profondeur aura des implications significatives pour les utilisateurs et les entreprises. Pour les utilisateurs, Bing Deep Search rendra plus facile la recherche d'informations précises et pertinentes. Pour les entreprises, cette technologie offrira de nouvelles opportunités pour atteindre des audiences cibles et améliorer la visibilité en ligne. En résumé, Bing Deep Search représente une avancée majeure dans le domaine de la recherche en ligne, promettant une expérience utilisateur améliorée et des résultats plus fiables.
+		        </p>
+		    </div>
+	   	</div>
+	</div>
+	
+</body>
+</html>
